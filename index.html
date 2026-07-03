@@ -1,101 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+  <meta charset="UTF-8">
+  <title>Team Beacon</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Call Apps Script in the background
+    fetch("https://script.google.com/macros/s/AKfycbxL94OvHaTAP4Ut8bTXwaNFKL09x7WHAQ105WuSbnv8rZMLN7LuVsUUBhmKJzzZSbs/exec", {
+      method: "GET",
+      mode: "no-cors"
+    });
 
-<title>Team Beacon</title>
+    // Open your Google Site after 1 second
+    setTimeout(function () {
+      window.location.href = "https://sites.google.com/view/thank-you-yatri-2026/home";
+    }, 1000);
+  </script>
 
-<style>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#f5f5f5;
+    }
 
-body{
-    margin:0;
-    background:#0f5132;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    font-family:Arial,sans-serif;
-}
+    .card{
+      background:white;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+      text-align:center;
+    }
 
-.card{
-
-    background:white;
-    width:90%;
-    max-width:500px;
-
-    padding:40px;
-
-    text-align:center;
-
-    border-radius:18px;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
-
-}
-
-h1{
-
-color:#8B0000;
-margin-bottom:20px;
-
-}
-
-h2{
-
-margin-top:0;
-
-}
-
-p{
-
-font-size:18px;
-line-height:1.6;
-
-}
-
-</style>
-
+    h2{
+      color:#8B0000;
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="card">
-
-<h2>🙏 हर हर महादेव 🙏</h2>
-
-<h1>THANK YOU</h1>
-
-<p>
-
-Thank you for connecting with
-
-</p>
-
-<h2>TEAM BEACON</h2>
-
-<p>
-
-Your support and encouragement inspire us to continue serving pilgrims during the Holy Shri Amarnath Ji Yatra.
-
-</p>
-
-<p><b>Redirecting...</b></p>
-
+  <h2>🙏 Thank You!</h2>
+  <p>Redirecting...</p>
 </div>
 
-<script>
-
-setTimeout(function(){
-
-window.location.replace("https://sites.google.com/view/thank-you-yatri-2026/home");
-
-},3000);
-
-</script>
-
 </body>
-
 </html>
