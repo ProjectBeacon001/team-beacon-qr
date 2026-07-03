@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Team Beacon</title>
 
 <style>
 
 body{
-
-margin:0;
-background:#0f5132;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-font-family:Arial,sans-serif;
-
+    margin:0;
+    background:#0f5132;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial,sans-serif;
 }
 
 .card{
-
-background:white;
-padding:40px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.25);
-max-width:450px;
-width:90%;
-
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    max-width:450px;
+    width:90%;
 }
 
 h1{
-
-color:#8B0000;
-margin-bottom:10px;
-
+    color:#8B0000;
+    margin-bottom:10px;
 }
 
 #visitor{
-
-font-size:55px;
-font-weight:bold;
-color:#006400;
-margin:20px 0;
-
+    font-size:55px;
+    font-weight:bold;
+    color:#006400;
+    margin:20px 0;
 }
 
 p{
-
-font-size:18px;
-
+    font-size:18px;
 }
 
 </style>
@@ -68,7 +60,7 @@ font-size:18px;
 
 <p>You are the</p>
 
-<div id="visitor">...</div>
+<div id="visitor">Loading...</div>
 
 <p><b>YATRI</b></p>
 
@@ -84,33 +76,32 @@ font-size:18px;
 
 function ordinal(n){
 
-n=parseInt(n);
+    n = parseInt(n);
 
-if(n%100>=11 && n%100<=13)
-return n+"th";
+    if(isNaN(n)){
+        return "Welcome!";
+    }
 
-switch(n%10){
+    if(n % 100 >= 11 && n % 100 <= 13){
+        return n + "th";
+    }
 
-case 1:return n+"st";
-case 2:return n+"nd";
-case 3:return n+"rd";
-default:return n+"th";
-
+    switch(n % 10){
+        case 1: return n + "st";
+        case 2: return n + "nd";
+        case 3: return n + "rd";
+        default: return n + "th";
+    }
 }
 
-}
+const params = new URLSearchParams(window.location.search);
+const visitor = params.get("visitor");
 
-const params=new URLSearchParams(window.location.search);
+document.getElementById("visitor").innerHTML = ordinal(visitor);
 
-const visitor=params.get("visitor");
-
-document.getElementById("visitor").innerHTML=ordinal(visitor);
-
-setTimeout(function(){
-
-window.location.href="https://sites.google.com/view/thank-you-yatri-2026/home";
-
-},3000);
+setTimeout(function () {
+    window.location.replace("https://sites.google.com/view/thank-you-yatri-2026/home");
+}, 3000);
 
 </script>
 
