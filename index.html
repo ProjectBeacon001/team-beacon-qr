@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
@@ -21,29 +21,39 @@ body{
 }
 
 .card{
+
     background:white;
-    padding:40px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-    max-width:450px;
     width:90%;
+    max-width:500px;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+
 }
 
 h1{
-    color:#8B0000;
-    margin-bottom:10px;
+
+color:#8B0000;
+margin-bottom:20px;
+
 }
 
-#visitor{
-    font-size:55px;
-    font-weight:bold;
-    color:#006400;
-    margin:20px 0;
+h2{
+
+margin-top:0;
+
 }
 
 p{
-    font-size:18px;
+
+font-size:18px;
+line-height:1.6;
+
 }
 
 </style>
@@ -58,50 +68,34 @@ p{
 
 <h1>THANK YOU</h1>
 
-<div id="visitor">Loading...</div>
+<p>
 
-<p><b>YATRI</b></p>
+Thank you for connecting with
 
-<p>Thank you for connecting with</p>
+</p>
 
-<b>TEAM BEACON</b>
+<h2>TEAM BEACON</h2>
 
-<p>Redirecting...</p>
+<p>
+
+Your support and encouragement inspire us to continue serving pilgrims during the Holy Shri Amarnath Ji Yatra.
+
+</p>
+
+<p><b>Redirecting...</b></p>
 
 </div>
 
 <script>
 
-function ordinal(n){
+setTimeout(function(){
 
-    n = parseInt(n);
+window.location.replace("https://sites.google.com/view/thank-you-yatri-2026/home");
 
-    if(isNaN(n)){
-        return "Welcome!";
-    }
-
-    if(n % 100 >= 11 && n % 100 <= 13){
-        return n + "th";
-    }
-
-    switch(n % 10){
-        case 1: return n + "st";
-        case 2: return n + "nd";
-        case 3: return n + "rd";
-        default: return n + "th";
-    }
-}
-
-const params = new URLSearchParams(window.location.search);
-const visitor = params.get("visitor");
-
-document.getElementById("visitor").innerHTML = ordinal(visitor);
-
-setTimeout(function () {
-    window.location.replace("https://sites.google.com/view/thank-you-yatri-2026/home");
-}, 3000);
+},3000);
 
 </script>
 
 </body>
+
 </html>
