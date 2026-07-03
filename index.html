@@ -1,56 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Team Beacon</title>
 
 <style>
 
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#0f5132;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
+
+margin:0;
+background:#0f5132;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial,sans-serif;
+
 }
 
 .card{
 
 background:white;
-color:#0f5132;
 padding:40px;
 border-radius:15px;
+text-align:center;
 box-shadow:0 5px 20px rgba(0,0,0,.25);
-max-width:500px;
+max-width:450px;
 width:90%;
 
 }
 
 h1{
-font-size:40px;
-margin:0;
-}
 
-h2{
-font-size:28px;
-margin-top:10px;
+color:#8B0000;
+margin-bottom:10px;
+
 }
 
 #visitor{
-font-size:60px;
+
+font-size:55px;
 font-weight:bold;
-color:#c62828;
+color:#006400;
 margin:20px 0;
+
 }
 
 p{
+
 font-size:18px;
+
 }
 
 </style>
@@ -69,9 +70,11 @@ font-size:18px;
 
 <div id="visitor">...</div>
 
-<p>YATRI</p>
+<p><b>YATRI</b></p>
 
-<p>Thank you for connecting with <b>TEAM BEACON</b></p>
+<p>Thank you for connecting with</p>
+
+<b>TEAM BEACON</b>
 
 <p>Redirecting...</p>
 
@@ -79,38 +82,35 @@ font-size:18px;
 
 <script>
 
-const api="https://script.google.com/macros/s/AKfycbw8QUk7K-OkoPHNRVILu220UoZiNvZ3tv0947f3Oj1lURbqLY9-AAhWfOv6klYl6Bc/exec";
+function ordinal(n){
 
-fetch(api)
-.then(r=>r.json())
-.then(data=>{
+n=parseInt(n);
 
-let n=data.scanNo;
+if(n%100>=11 && n%100<=13)
+return n+"th";
 
-function ordinal(x){
+switch(n%10){
 
-if(x%100>=11 && x%100<=13) return x+"th";
-
-switch(x%10){
-
-case 1:return x+"st";
-case 2:return x+"nd";
-case 3:return x+"rd";
-default:return x+"th";
+case 1:return n+"st";
+case 2:return n+"nd";
+case 3:return n+"rd";
+default:return n+"th";
 
 }
 
 }
 
-document.getElementById("visitor").innerHTML=ordinal(n);
+const params=new URLSearchParams(window.location.search);
+
+const visitor=params.get("visitor");
+
+document.getElementById("visitor").innerHTML=ordinal(visitor);
 
 setTimeout(function(){
 
 window.location.href="https://sites.google.com/view/thank-you-yatri-2026/home";
 
 },3000);
-
-});
 
 </script>
 
